@@ -7,11 +7,13 @@ authors = ["top-on <top-on@posteo.de>"]
 [tool.poetry.dependencies]
 python = "^3.8"
 typer = "^0.4.0"
+toml = "^0.10.2"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
 black = "^21.12b0"
 flake8 = "^4.0.1"
+notebook = "^6.4.6"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
