@@ -1,12 +1,19 @@
 # %%
-import wget
 import zipfile
 
+import wget
+
+from offline_docs_py.dependencies import (
+    parse_major_minor,
+    read_running_python_version_full,
+)
 from offline_docs_py.paths import OUT_DIR
 
-
-URL = "https://docs.python.org/3.7/archives/python-3.7.12-docs-html.zip"
-PYTHON_ZIP = OUT_DIR / "python-docs-html.zip"
+# %%
+python_ver_full = read_running_python_version_full()
+python_ver_major_minor = parse_major_minor(major_minor_patch=python_ver_full)
+URL = f"https://docs.python.org/{python_ver_major_minor}/archives/python-{python_ver_full}-docs-html.zip"
+PYTHON_ZIP = OUT_DIR / f"python-{python_ver_full}-docs-html.zip"
 
 # %% download
 OUT_DIR.mkdir(parents=True, exist_ok=True)
