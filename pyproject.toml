@@ -6,8 +6,8 @@ authors = ["top-on <top-on@posteo.de>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-typer = "^0.4.0"
 toml = "^0.10.2"
+wget = "^3.2"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
