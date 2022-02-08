@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "offline-docs-py"
+name = "offline-docs"
 version = "0.1.0"
 description = ""
 authors = ["top-on <top-on@posteo.de>"]

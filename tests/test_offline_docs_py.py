@@ -1,4 +1,4 @@
-from offline_docs_py import __version__
+from offline_docs import __version__
 
 
 def test_version():

@@ -1,7 +1,7 @@
 # %%
 from pathlib import Path
 
-from offline_docs_py.dependencies import read_dependencies_poetry
+from offline_docs.dependencies import read_dependencies_poetry
 
 
 PYPROJECT = Path("pyproject.toml")

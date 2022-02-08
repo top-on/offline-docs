@@ -1,4 +1,4 @@
-from offline_docs_py.dependencies import (
+from offline_docs.dependencies import (
     min_python_version,
     parse_major_minor,
 )
