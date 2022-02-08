@@ -1,5 +1,8 @@
+"""Central module to define paths."""
+
 from pathlib import Path
 
-OUT_DIR = Path("out/")
+ROOT_DIR = Path.home() / ".offline-docs/"
+CACHE_DIR = ROOT_DIR / "cache"
 
-PYTHON_DIR = OUT_DIR / "python"
+PYTHON_DIR = ROOT_DIR / "python"
