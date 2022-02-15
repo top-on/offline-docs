@@ -1,9 +1,12 @@
 [tool.poetry]
 name = "offline-docs"
-version = "0.2.2"
+version = "0.2.3"
 description = "Downloads documentation of Python project dependencies for offline availability."
 readme = "README.md"
 authors = ["top-on <top-on@posteo.de>"]
+
+[tool.poetry.urls]
+repository = "https://github.com/top-on/offline-docs"
 
 [tool.poetry.dependencies]
 python = "^3.8"
