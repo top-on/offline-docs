@@ -3,6 +3,7 @@
 
 # python
 *.pyc
+/dist
 
 # ide
 /.vscode
