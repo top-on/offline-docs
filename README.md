@@ -39,5 +39,4 @@ Compared to zeal, `offline-docs`:
 
 This section gives an outlook on how `offline-docs` could develop in the future. 
 
-* Replace `wget` dependency with `requests`.
 * Download docs from [readthedocs.org](https://readthedocs.org).
