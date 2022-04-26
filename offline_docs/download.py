@@ -5,10 +5,8 @@ from pathlib import Path
 import wget
 from urlpath import URL
 
-from offline_docs.paths import CACHE_DIR
 
-
-def download(url: Path) -> Path:
+def download(url: URL, target_dir: Path) -> Path:
     """Download file, if not in cache yet.
 
     Args:
@@ -17,9 +15,9 @@ def download(url: Path) -> Path:
     Returns:
         Path: Path to cached download.
     """
-    CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    target_dir.mkdir(parents=True, exist_ok=True)
 
-    out_file = CACHE_DIR / url.name
+    out_file = target_dir / url.name
 
     if out_file.exists():
         print(f"Found {out_file.name}. Skipping download.")

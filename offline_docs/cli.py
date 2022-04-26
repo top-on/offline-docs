@@ -29,7 +29,8 @@ def python():
     url = URL(
         f"https://docs.python.org/{version_minor}/archives/python-{version_patch}-docs-html.zip"  # noqa: E501
     )
-    out_file = download(url=url)
+    target_dir = ROOT_DIR / "python"
+    out_file = download(url=url, target_dir=target_dir)
 
     # extract
     python_version_dir = PYTHON_DIR / version_patch
@@ -50,7 +51,7 @@ def python():
 @app.command()
 def clean():
     """Remove all downloaded docs from disc."""
-    typer.echo("Removing all downloads...")
+    typer.echo(f"Empyting folder {ROOT_DIR}...")
     if ROOT_DIR.exists():
         shutil.rmtree(str(ROOT_DIR))
     typer.echo("Done.")

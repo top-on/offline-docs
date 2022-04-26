@@ -2,7 +2,6 @@
 
 from pathlib import Path
 
-ROOT_DIR = Path.home() / ".offline-docs/"
-CACHE_DIR = ROOT_DIR / "cache"
+ROOT_DIR = Path.home() / ".cache/offline-docs/"
 
 PYTHON_DIR = ROOT_DIR / "python"
