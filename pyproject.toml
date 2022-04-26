@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "offline-docs"
-version = "0.2.3"
-description = "Downloads documentation of Python project dependencies for offline availability."
+version = "0.3.0"
+description = "CLI to quickly access docs of Python libraries, supporing offline usage."
 readme = "README.md"
 authors = ["top-on <top-on@posteo.de>"]
 
