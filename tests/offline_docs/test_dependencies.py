@@ -1,15 +1,19 @@
+"""Test functions for infering dependency versions."""
+
+import re
+
 from offline_docs.dependencies import (
-    min_python_version,
     parse_major_minor,
+    read_running_python_version_full,
 )
 
 
-def test_min_python_version():
-    dependencies = {"python": "^3.8"}
+def test_read_running_python_version_full():
 
-    result = min_python_version(dependencies=dependencies)
+    python_version = read_running_python_version_full()
 
-    assert result == "3.8"
+    regex = r"[23].\d+.\d+"
+    assert re.match(regex, python_version), "Python version not does not match pattern."
 
 
 def test_extract_major_minor():

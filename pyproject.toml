@@ -10,7 +10,6 @@ repository = "https://github.com/top-on/offline-docs"
 
 [tool.poetry.dependencies]
 python = "^3.8"
-toml = "^0.10.2"
 wget = "^3.2"
 typer = "^0.4.0"
 urlpath = "^1.2.0"
