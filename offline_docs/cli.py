@@ -5,7 +5,6 @@ import webbrowser
 import zipfile
 
 import typer
-import wget
 from urlpath import URL
 
 from offline_docs.dependencies import (
@@ -13,7 +12,7 @@ from offline_docs.dependencies import (
     read_running_python_version_full,
 )
 from offline_docs.download import download
-from offline_docs.paths import PYTHON_DIR, CACHE_DIR, ROOT_DIR
+from offline_docs.paths import PYTHON_DIR, ROOT_DIR
 
 app = typer.Typer(add_completion=False)
 
@@ -22,13 +21,13 @@ app = typer.Typer(add_completion=False)
 def python():
     """Download and show docs for the running version of Python."""
     # python version
-    typer.echo(f"Infering running python version...")
+    typer.echo("Infering running python version...")
     version_patch = read_running_python_version_full()
     version_minor = parse_major_minor(major_minor_patch=version_patch)
 
     # download docs
     url = URL(
-        f"https://docs.python.org/{version_minor}/archives/python-{version_patch}-docs-html.zip"
+        f"https://docs.python.org/{version_minor}/archives/python-{version_patch}-docs-html.zip"  # noqa: E501
     )
     out_file = download(url=url)
 
@@ -38,9 +37,9 @@ def python():
     python_html = python_version_dir / f"python-{version_patch}-docs-html/index.html"
 
     if python_html.exists():
-        typer.echo(f"Found extracted docs. Skipping extraction.")
+        typer.echo("Found extracted docs. Skipping extraction.")
     else:
-        typer.echo(f"Extracting docs (Python {version_patch})...")
+        typer.echo("Extracting docs (Python {version_patch})...")
         with zipfile.ZipFile(str(out_file), "r") as zip_ref:
             zip_ref.extractall(python_version_dir)
 
@@ -51,10 +50,10 @@ def python():
 @app.command()
 def clean():
     """Remove all downloaded docs from disc."""
-    typer.echo(f"Removing all downloads...")
+    typer.echo("Removing all downloads...")
     if ROOT_DIR.exists():
         shutil.rmtree(str(ROOT_DIR))
-    typer.echo(f"Done.")
+    typer.echo("Done.")
 
 
 def main():
