@@ -14,12 +14,16 @@ from offline_docs.dependencies import (
 from offline_docs.download import download
 from offline_docs.paths import PYTHON_DIR, ROOT_DIR
 
-app = typer.Typer(add_completion=False)
+app = typer.Typer(
+    add_completion=False,
+    no_args_is_help=True,
+    help="Quick access to Python library docs, cached for offline availability.",
+)
 
 
 @app.command()
 def python():
-    """Download and show docs for the running version of Python."""
+    """Open docs for the current Python version in browser."""
     # python version
     typer.echo("Infering running python version...")
     version_patch = read_running_python_version_full()
@@ -50,7 +54,7 @@ def python():
 
 @app.command()
 def clean():
-    """Remove all downloaded docs from disc."""
+    """Remove all downloaded docs from local cache."""
     typer.echo(f"Empyting folder {ROOT_DIR}...")
     if ROOT_DIR.exists():
         shutil.rmtree(str(ROOT_DIR))

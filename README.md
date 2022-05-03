@@ -1,6 +1,6 @@
 # offline-docs
 
-Downloads documentation of Python project dependencies for offline availability.
+Quick access to Python library docs, cached for offline availability.
 
 
 ## Usage
