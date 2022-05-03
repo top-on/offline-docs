@@ -16,7 +16,7 @@ urlpath = "^1.2.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
-black = "^21.12b0"
+black = "^22.0"
 flake8 = "^4.0.1"
 notebook = "^6.4.6"
 pydocstyle = "^6.1.1"
