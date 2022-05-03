@@ -11,12 +11,14 @@ $ offline-docs --help
 
 Usage: offline-docs [OPTIONS] COMMAND [ARGS]...
 
+  Quick access to Python library docs, cached for offline availability.
+
 Options:
   --help  Show this message and exit.
 
 Commands:
-  clean   Remove all downloaded docs from disc.
-  python  Download and show docs for the running version of Python.
+  clean   Remove all downloaded docs from local cache.
+  python  Open docs for the current Python version in browser.
 ```
 
 
