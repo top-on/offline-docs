@@ -1,6 +1,5 @@
 """CLI entrypoint for app."""
 
-import os
 import subprocess
 import shutil
 import zipfile
