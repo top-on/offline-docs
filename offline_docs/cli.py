@@ -1,7 +1,8 @@
 """CLI entrypoint for app."""
 
+import os
+import subprocess
 import shutil
-import webbrowser
 import zipfile
 
 import typer
@@ -49,7 +50,7 @@ def python():
             zip_ref.extractall(python_version_dir)
 
     # open docs
-    webbrowser.open(url=str(python_pdf))
+    subprocess.Popen(["xdg-open", python_pdf])
 
 
 @app.command()
