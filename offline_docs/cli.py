@@ -26,30 +26,30 @@ def python():
     """Open docs for the current Python version in browser."""
     # python version
     typer.echo("Infering running python version...")
-    version_patch = read_running_python_version_full()
-    version_minor = parse_major_minor(major_minor_patch=version_patch)
+    version_full = read_running_python_version_full()
+    version_minor = parse_major_minor(major_minor_patch=version_full)
 
     # download docs
     url = URL(
-        f"https://docs.python.org/{version_minor}/archives/python-{version_patch}-docs-html.zip"  # noqa: E501
+        f"https://docs.python.org/{version_minor}/archives/python-{version_full}-docs-pdf-a4.zip"  # noqa: E501
     )
     target_dir = ROOT_DIR / "python"
     out_file = download(url=url, target_dir=target_dir)
 
     # extract
-    python_version_dir = PYTHON_DIR / version_patch
-    python_version_dir.mkdir(parents=True, exist_ok=True)
-    python_html = python_version_dir / f"python-{version_patch}-docs-html/index.html"
+    python_version_dir = PYTHON_DIR / version_full
+    python_pdf = python_version_dir / "docs-pdf/library.pdf"
 
-    if python_html.exists():
+    if python_pdf.exists():
         typer.echo("Found extracted docs. Skipping extraction.")
     else:
         typer.echo("Extracting docs (Python {version_patch})...")
+        python_version_dir.mkdir(parents=True, exist_ok=True)
         with zipfile.ZipFile(str(out_file), "r") as zip_ref:
             zip_ref.extractall(python_version_dir)
 
     # open docs
-    webbrowser.open(url=str(python_html))
+    webbrowser.open(url=str(python_pdf))
 
 
 @app.command()
